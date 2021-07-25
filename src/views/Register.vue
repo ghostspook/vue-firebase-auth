@@ -29,7 +29,7 @@
     methods: {
       async onSubmitClick() {
         try {
-          const user = firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+          const user = await firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
           console.log(user)
           this.$router.push({name: 'Restricted'})
         } catch(err) {

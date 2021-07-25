@@ -9,7 +9,7 @@
       <div class="password">
         <input type="password" v-model="password">
       </div>
-      <button type="submit">Register</button>
+      <button type="submit">Login</button>
     </form>
   </div>
 </template>
@@ -29,7 +29,7 @@
     methods: {
       async onSubmitClick() {
         try {
-          const user = firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+          const user = await firebase.auth().signInWithEmailAndPassword(this.email, this.password)
           console.log(user)
           this.$router.push({name: 'Restricted'})
         } catch(err) {

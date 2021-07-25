@@ -26,7 +26,7 @@
     methods: {
       async signOut() {
         try {
-          const data = firebase.auth().signOut()
+          const data = await firebase.auth().signOut()
           console.log(data)
           this.loggedIn = false
           this.$router.push({name: 'Login'})
